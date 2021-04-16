@@ -18,9 +18,7 @@ import kotlin.collections.ArrayList
 class MainActivity : AppCompatActivity() {
 
     // API from OpenWeather
-    val CITY: String = "Jakarta"
     val API: String = "f86831358376e872095bdd8365e68faf"
-    val lang: String = "id"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,9 +35,9 @@ class MainActivity : AppCompatActivity() {
             findViewById<RelativeLayout>(R.id.mainContainer).visibility = View.GONE
             findViewById<TextView>(R.id.errorText).visibility = View.GONE
         }
-
         override fun doInBackground(vararg params: String?): String? {
             var response: String?
+            // Get the data from Permission Activity and put to URL
             val lon = intent.getDoubleExtra("longitude", 0.00)
             val lat = intent.getDoubleExtra("latitude", 0.00)
             try {
@@ -56,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
-
+            // Several list of JSON Object for implementing
             try {
                 /* Extracting JSON returns from the API */
                 val jsonObj = JSONObject(result)

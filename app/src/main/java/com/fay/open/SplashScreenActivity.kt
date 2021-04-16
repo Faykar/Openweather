@@ -23,6 +23,8 @@ class SplashScreenActivity : AppCompatActivity() {
         title.startAnimation(ltc)
         iv_icon.startAnimation(stb)
 
+
+        // Delay for the Splashscreen
         val handler = Handler()
         handler.postDelayed({
             val intent = Intent(this@SplashScreenActivity,

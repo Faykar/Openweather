@@ -36,6 +36,7 @@ class PermissionActivity : AppCompatActivity() {
 
     }
 
+    // Permission to get location
     private fun fetchLocation() {
         val task = fusedLocationProviderClient.lastLocation
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
@@ -45,6 +46,7 @@ class PermissionActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), 101)
             return
         }
+        // When access allowed, pass the location (latitude and longitude to another activity)
         task.addOnSuccessListener {
             if (it != null) {
                 val intent = Intent(this@PermissionActivity,
