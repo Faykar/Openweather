@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import retrofit2.Retrofit
 
 class PermissionActivity : AppCompatActivity() {
 
