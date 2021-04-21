@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         getCurrentData()
     }
+    private suspend fun getResult() {
+
+    }
+
 
     internal fun getCurrentData() {
         val lon = intent.getDoubleExtra("longitude", 0.00)
@@ -76,6 +80,8 @@ class MainActivity : AppCompatActivity() {
 
                     val address = weatherResponse.name + ", "+ sys.country
 
+
+
                     findViewById<TextView>(R.id.address).text = address
                     findViewById<TextView>(R.id.updated_at).text = updatedAtText
                     findViewById<TextView>(R.id.status).text = weatherDesc!!.capitalize()
@@ -90,7 +96,7 @@ class MainActivity : AppCompatActivity() {
 
                     // Glider for Weather Icon
                     Glide.with(this@MainActivity)
-                            .load(weatherURL+weatherIcon+"@2x.png")
+                            .load("$weatherURL$weatherIcon@2x.png")
                             .fitCenter()
                             .into(descIcon)
                     Log.v("1128", "weather icon is $weatherURL$weatherIcon")

@@ -13,6 +13,9 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 
 class PermissionActivity : AppCompatActivity() {
@@ -51,13 +54,15 @@ class PermissionActivity : AppCompatActivity() {
         }
         // When access allowed, pass the location (latitude and longitude to another activity)
         task.addOnSuccessListener {
-            if (it != null) {
-                val intent = Intent(this@PermissionActivity,
+            CoroutineScope(Main).launch {
+                if (it != null) {
+                    val intent = Intent(this@PermissionActivity,
                         MainActivity::class.java)
                         .putExtra("latitude", it.latitude)
                         .putExtra("longitude", it.longitude)
-                startActivity(intent)
-                finish()
+                    startActivity(intent)
+                    finish()
+                }
             }
         }
     }
