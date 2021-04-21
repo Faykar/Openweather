@@ -33,7 +33,25 @@
                 android:layout_height="wrap_content"
                 android:text="20 April 2012, 20:08 PM"
                 android:textSize="14dp" />
+
+            <LinearLayout
+                android:id="@+id/weatherIcon"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/descIcon"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    />
+
+            </LinearLayout>
         </LinearLayout>
+
+
 
 
         <LinearLayout
@@ -93,7 +111,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/detailsContainer"
