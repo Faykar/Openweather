@@ -1,10 +1,10 @@
 # Openweather
 This is a Weather Provider, 
-i created this app using Android Studio (Kotlin) and 
-Openweather to get the API
-3rd Library 
-=> Retrofit
-=> Coroutines
+i created this app using Android Studio (Kotlin)  <br>
+Openweather to get the API <br>
+3rd Library <br>
+=> Retrofit <br>
+=> Coroutines <br>
 => Glide
 
 
