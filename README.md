@@ -3,9 +3,9 @@ This is a Weather Provider,
 i created this app using Android Studio (Kotlin) and 
 Openweather to get the API
 3rd Library 
-= Retrofit
-= Coroutines
-= Glide
+=> Retrofit
+=> Coroutines
+=> Glide
 
 
 ## Source Code
